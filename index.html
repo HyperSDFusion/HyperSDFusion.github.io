@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="HyperSDFusion">
+  <meta name="keywords" content="Hyperbolic Space, Text-to-shape Generation, Diffusion Models">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HyperSDFusion</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/icon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h2 class="title is-2 publication-title">
+              HyperSDFusion: Bridging Hierarchical Structures in Language and Geometry for Enhanced 3D Text2Shape Generation
+            </h2>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=ZjknvysAAAAJ">Zhiying Leng</a><sup>1,2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=_Bxd5ggAAAAJ">Tolga Birdal</a><sup>3</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scse.buaa.edu.cn/info/1089/2963.htm">Xiaohui Liang</a><sup>2,4</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=TFsE4BIAAAAJ">Federico Tombari</a><sup>1</sup>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Technical University of Munich  &emsp;</span>
+              <span class="author-block"><sup>3</sup>Imperial College London</span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"> &emsp; &emsp; &emsp;<sup>2</sup>Beihang University   &emsp;   &emsp;  &emsp;</span>
+              <span class="author-block"><sup>4</sup>Zhongguancun Laboratory</span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"> <font color="#0B5394"> CVPR 2024 </font></span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- Paper Link. -->
+                <span class="link-block">
+                <a href="https://arxiv.org/abs/2403.00372" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/M-leng/HyperSDFusion-Text2Shape" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <!-- Video Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/M-leng/HyperSDFusion-Text2Shape" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video (coming soon)</span>
+                  </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <h5 class="subtitle is-5">
+        <b>HyperSDFusion</b> learns the hierarchical representation for text and shape in Hyperbolic space, bridging hierarchical structures in language and geometry for enhanced 3D Text2Shape generation. Given a set of general texts and detailed texts, HyperSDFusion generates 3D shapes that are faithful to text descriptions and exhibit the hierarchy structure.
+
+        </h5>
+        <img src="./static/images/teaser.png" autoplay muted loop playsinline height="100%">
+        <h2 class="subtitle has-text-centered">
+          Figure 1: (a) The text-shape hierarchy. (b) The synatic tree of text. (c) The hierarchical structure of 3D shape. (d)  Visualizing the text-shape hierarchical structure of generated 3D shapes.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+<!-- Paper abstract -->
+<!-- <p style="margin-bottom: -1.5cm;"></p> -->
+  <!-- <p style="margin-bottom: -1.5cm;"></p> -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+             3D shape generation from text is a fundamental task in 3D representation learning. The text-shape pairs exhibit a hierarchical structure, where a general text like ``chair" covers all 3D shapes of the chair, while more detailed prompts refer to more specific shapes. Furthermore, both text and 3D shapes are inherently hierarchical structures. However, existing Text2Shape methods, such as SDFusion, do not exploit that. In this work, we propose <b style="color: rgb(124, 196, 245);">HyperSDFusion</b>, a dual-branch diffusion model that generates 3D shapes from a given text. Since hyperbolic space is suitable for handling hierarchical data, we propose to learn the hierarchical representations of text and 3D shapes in hyperbolic space. First, we introduce a hyperbolic text-image encoder to learn the sequential and multi-modal hierarchical features of text in hyperbolic space. In addition, we design a hyperbolic text-graph convolution module to learn the hierarchical features of text in hyperbolic space. In order to fully utilize these text features, we introduce a dual-branch structure to embed text features in 3D feature space. At last, to endow the generated 3D shapes with a hierarchical structure, we devise a hyperbolic hierarchical loss. Our method is the first to explore the hyperbolic hierarchical representation for text-to-shape generation. Experimental results on the existing text-to-shape paired dataset, Text2Shape, achieved state-of-the-art results.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- End paper abstract -->
+
+<!-- Method -->  
+  <p style="margin-bottom: 1.5cm;"></p>
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <h3 class="title is-3 has-text-centered">The proposed HyperSDFusion</h3>
+        <img src="./static/images/Overview.png" autoplay muted loop playsinline height="100%">
+        <img src="./static/images/methods.png" autoplay muted loop playsinline height="100%">
+      </div>
+    </div>
+  </section>
+<!-- End Method -->
+
+<!-- Generation -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <h3 class="title is-3 has-text-centered">Text-to-shape generation results</h3>
+         <br>
+          <img src="./static/images/generation1.png" autoplay muted loop playsinline height="100%">
+          <h2 class="subtitle has-text-centered">
+            Figure 4: (a) The showcase of text-to-shape generation results compared to SDFusion. (b) More generation results, especially generated from long and complex text.
+          </h2>
+         <br/>
+      </div>
+    </div>
+  </section>
+<!-- End Generation -->
+
+<!-- Visualization -->
+  <p style="margin-bottom: 1.5cm;"></p>
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <h3 class="title is-3 has-text-centered">Visualizations of Hierarchical Learning</h3>
+        <br>
+          <img src="./static/images/generation2.png" autoplay muted loop playsinline height="100%">
+          <h2 class="subtitle has-text-centered">
+            Figure 5: More visualizations for capturing text-shape hierarchy.
+          </h2>
+
+          <img src="./static/images/vis1.png" autoplay muted loop playsinline height="100%">
+          <h2 class="subtitle has-text-centered">
+            Figure 6: (a) 2D text embeddings learned by SDFsuion in Euclidean space. (b) 2D text embeddings learned by our method
+in hyperbolic space. (c) is the magnified view of (b). (d) 3D Shape features generated from general and detailed texts in Hyperbolic space.
+          </h2>
+        <br/>
+      </div>
+    </div>
+  </section>
+<!--End Visualization -->
+
+  <!--BibTex citation -->
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <h2 class="title">BibTeX</h2>
+        <pre><code>
+    @InProceedings{HyperSDFusion_2023_CVPR,
+    author    = {Leng, Zhiying and Birdal, Tolga and Liang, Xiaohui and Tombari, Federico},
+    title     = {HyperSDFusion: Bridging Hierarchical Structures in Language and Geometry for Enhanced 3D Text2Shape Generation},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2024},
+}</code></pre>
+      </div>
+  </section>
+  <!--End BibTex citation -->
+
+  <p style="margin-bottom: -1.5cm;"></p>
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content is-size-6">
+  </code></pre>
+  <h2 class="title">Contact us</h2>
+  <style>
+    ul {
+      list-style-type: circle;
+    }
+  </style>
+  <ul>
+    <li> For detailed questions about this work, please contact Zhiying Leng (<a href="zhiyingleng@buaa.edu.cn">zhiyingleng@buaa.edu.cn</a>). </li>
+  </ul>
+      </div>
+  </section>
+  
+  <footer class="footer">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-size-6">
+            <div class="content">
+              <p class="subtitle has-text-centered">
+	       This work was done when the author was at TUM. 
+	  	</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+
+  </html>
